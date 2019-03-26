@@ -116,7 +116,171 @@ with_ratio = with_ratio[with_ratio["Primer Preu"] != 0]
 with_ratio = with_ratio[with_ratio["Ultim Preu"] != 0]
 ```
 
-## Llista ordenada de barris basat en el canvi del preu absolut del lloguer
+## Barris mes cars
+
+
+```python
+with_ratio.sort_values('Ultim Preu', ascending=False).reset_index(drop=True).head(5)
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Barris</th>
+      <th>Primer Preu</th>
+      <th>Ultim Preu</th>
+      <th>Creixement Total</th>
+      <th>Creixement %</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>21. Pedralbes</td>
+      <td>1230.00</td>
+      <td>1615.31</td>
+      <td>385.31</td>
+      <td>23.853626</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>24. les Tres Torres</td>
+      <td>1215.85</td>
+      <td>1567.91</td>
+      <td>352.06</td>
+      <td>22.454095</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>23. Sarrià</td>
+      <td>1042.16</td>
+      <td>1422.80</td>
+      <td>380.64</td>
+      <td>26.752882</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>26. Sant Gervasi - Galvany</td>
+      <td>1053.70</td>
+      <td>1374.82</td>
+      <td>321.12</td>
+      <td>23.357239</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>7. la Dreta de l'Eixample</td>
+      <td>921.40</td>
+      <td>1340.38</td>
+      <td>418.98</td>
+      <td>31.258300</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+## Barris mes barats
+
+
+```python
+with_ratio.sort_values('Ultim Preu', ascending=True).reset_index(drop=True).head(5)
+```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Barris</th>
+      <th>Primer Preu</th>
+      <th>Ultim Preu</th>
+      <th>Creixement Total</th>
+      <th>Creixement %</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>55. Ciutat Meridiana</td>
+      <td>359.27</td>
+      <td>514.52</td>
+      <td>155.25</td>
+      <td>30.173754</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>57. la Trinitat Vella</td>
+      <td>461.10</td>
+      <td>564.56</td>
+      <td>103.46</td>
+      <td>18.325776</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>53. la Trinitat Nova</td>
+      <td>442.94</td>
+      <td>575.38</td>
+      <td>132.44</td>
+      <td>23.017832</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>50. les Roquetes</td>
+      <td>461.28</td>
+      <td>595.81</td>
+      <td>134.53</td>
+      <td>22.579346</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>51. Verdun</td>
+      <td>503.47</td>
+      <td>649.22</td>
+      <td>145.75</td>
+      <td>22.450017</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+## Llista ordenada de barris basat en el preu absolut de creixement del lloguer
 
 
 ```python
@@ -1287,293 +1451,293 @@ for title, group in melted_monthly_rates.groupby('Barris'):
 
 
 
-![png](output_10_1.png)
+![png](output_14_1.png)
 
 
 
-![png](output_10_2.png)
+![png](output_14_2.png)
 
 
 
-![png](output_10_3.png)
+![png](output_14_3.png)
 
 
 
-![png](output_10_4.png)
+![png](output_14_4.png)
 
 
 
-![png](output_10_5.png)
+![png](output_14_5.png)
 
 
 
-![png](output_10_6.png)
+![png](output_14_6.png)
 
 
 
-![png](output_10_7.png)
+![png](output_14_7.png)
 
 
 
-![png](output_10_8.png)
+![png](output_14_8.png)
 
 
 
-![png](output_10_9.png)
+![png](output_14_9.png)
 
 
 
-![png](output_10_10.png)
+![png](output_14_10.png)
 
 
 
-![png](output_10_11.png)
+![png](output_14_11.png)
 
 
 
-![png](output_10_12.png)
+![png](output_14_12.png)
 
 
 
-![png](output_10_13.png)
+![png](output_14_13.png)
 
 
 
-![png](output_10_14.png)
+![png](output_14_14.png)
 
 
 
-![png](output_10_15.png)
+![png](output_14_15.png)
 
 
 
-![png](output_10_16.png)
+![png](output_14_16.png)
 
 
 
-![png](output_10_17.png)
+![png](output_14_17.png)
 
 
 
-![png](output_10_18.png)
+![png](output_14_18.png)
 
 
 
-![png](output_10_19.png)
+![png](output_14_19.png)
 
 
 
-![png](output_10_20.png)
+![png](output_14_20.png)
 
 
 
-![png](output_10_21.png)
+![png](output_14_21.png)
 
 
 
-![png](output_10_22.png)
+![png](output_14_22.png)
 
 
 
-![png](output_10_23.png)
+![png](output_14_23.png)
 
 
 
-![png](output_10_24.png)
+![png](output_14_24.png)
 
 
 
-![png](output_10_25.png)
+![png](output_14_25.png)
 
 
 
-![png](output_10_26.png)
+![png](output_14_26.png)
 
 
 
-![png](output_10_27.png)
+![png](output_14_27.png)
 
 
 
-![png](output_10_28.png)
+![png](output_14_28.png)
 
 
 
-![png](output_10_29.png)
+![png](output_14_29.png)
 
 
 
-![png](output_10_30.png)
+![png](output_14_30.png)
 
 
 
-![png](output_10_31.png)
+![png](output_14_31.png)
 
 
 
-![png](output_10_32.png)
+![png](output_14_32.png)
 
 
 
-![png](output_10_33.png)
+![png](output_14_33.png)
 
 
 
-![png](output_10_34.png)
+![png](output_14_34.png)
 
 
 
-![png](output_10_35.png)
+![png](output_14_35.png)
 
 
 
-![png](output_10_36.png)
+![png](output_14_36.png)
 
 
 
-![png](output_10_37.png)
+![png](output_14_37.png)
 
 
 
-![png](output_10_38.png)
+![png](output_14_38.png)
 
 
 
-![png](output_10_39.png)
+![png](output_14_39.png)
 
 
 
-![png](output_10_40.png)
+![png](output_14_40.png)
 
 
 
-![png](output_10_41.png)
+![png](output_14_41.png)
 
 
 
-![png](output_10_42.png)
+![png](output_14_42.png)
 
 
 
-![png](output_10_43.png)
+![png](output_14_43.png)
 
 
 
-![png](output_10_44.png)
+![png](output_14_44.png)
 
 
 
-![png](output_10_45.png)
+![png](output_14_45.png)
 
 
 
-![png](output_10_46.png)
+![png](output_14_46.png)
 
 
 
-![png](output_10_47.png)
+![png](output_14_47.png)
 
 
 
-![png](output_10_48.png)
+![png](output_14_48.png)
 
 
 
-![png](output_10_49.png)
+![png](output_14_49.png)
 
 
 
-![png](output_10_50.png)
+![png](output_14_50.png)
 
 
 
-![png](output_10_51.png)
+![png](output_14_51.png)
 
 
 
-![png](output_10_52.png)
+![png](output_14_52.png)
 
 
 
-![png](output_10_53.png)
+![png](output_14_53.png)
 
 
 
-![png](output_10_54.png)
+![png](output_14_54.png)
 
 
 
-![png](output_10_55.png)
+![png](output_14_55.png)
 
 
 
-![png](output_10_56.png)
+![png](output_14_56.png)
 
 
 
-![png](output_10_57.png)
+![png](output_14_57.png)
 
 
 
-![png](output_10_58.png)
+![png](output_14_58.png)
 
 
 
-![png](output_10_59.png)
+![png](output_14_59.png)
 
 
 
-![png](output_10_60.png)
+![png](output_14_60.png)
 
 
 
-![png](output_10_61.png)
+![png](output_14_61.png)
 
 
 
-![png](output_10_62.png)
+![png](output_14_62.png)
 
 
 
-![png](output_10_63.png)
+![png](output_14_63.png)
 
 
 
-![png](output_10_64.png)
+![png](output_14_64.png)
 
 
 
-![png](output_10_65.png)
+![png](output_14_65.png)
 
 
 
-![png](output_10_66.png)
+![png](output_14_66.png)
 
 
 
-![png](output_10_67.png)
+![png](output_14_67.png)
 
 
 
-![png](output_10_68.png)
+![png](output_14_68.png)
 
 
 
-![png](output_10_69.png)
+![png](output_14_69.png)
 
 
 
-![png](output_10_70.png)
+![png](output_14_70.png)
 
 
 
-![png](output_10_71.png)
+![png](output_14_71.png)
 
 
 
-![png](output_10_72.png)
+![png](output_14_72.png)
 
 
 
-![png](output_10_73.png)
+![png](output_14_73.png)
 
